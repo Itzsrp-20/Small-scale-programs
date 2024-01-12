@@ -1,0 +1,36 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+code=[]
+new_code=""
+x=len(text)
+for l in range(0,x):
+    code.append(text[l])
+if(direction=="encode"):
+    for i in range(0,x):
+        check=str(code[i]).isalpha()
+        if(check==False):
+            new_code=new_code+code[i]
+        else:
+            ind=alphabet.index(code[i])
+            new_ind=ind+shift
+            if(new_ind>26):
+                new_ind=new_ind-26
+            new_code=new_code+(alphabet[new_ind])
+    print(new_code)
+if(direction=="decode"):
+    for i in range(0,x):
+        check=str(code[i]).isalpha()
+        if(check==False):
+            new_code=new_code+" "
+        else:
+            ind=alphabet.index(code[i])
+            new_ind=ind-shift
+            if(new_ind<0):
+                new_ind=new_ind+26
+            new_code=new_code+(alphabet[new_ind])
+    print(new_code)
+
+
