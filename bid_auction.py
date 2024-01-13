@@ -1,3 +1,6 @@
+#This program is to conduct an auction and finally tell the name of the highest bidder and his bid amount.
+#This program continue as long as there is another bidder in the line .
+
 print("WELCOME TO THE SECRET AUCTION ")
 auc={}
 max=0
